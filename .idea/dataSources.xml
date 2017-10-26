@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tutorify_db@localhost" uuid="da30976a-687f-45d3-9c85-35f1e6a658ba">
+    <data-source source="LOCAL" name="tutorify_db@localhost" uuid="037505eb-92b6-40e1-83bf-b171eb0f7e33">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

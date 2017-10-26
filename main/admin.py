@@ -6,31 +6,31 @@ from . models import Tutor, Organization, Learner, Subject, Course, Announcement
 
 @admin.register(Tutor)
 class TutorAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email']
+    list_display = ['username', 'subject_name']
 
 
 @admin.register(Organization)
 class OrganizationAdmin(admin.ModelAdmin):
-    list_display = ['tutor', ]
+    list_display = ['username', ]
 
 
 @admin.register(Learner)
 class LearnerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email']
+    list_display = ['username', 'email']
 
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category']
+    list_display = ['subject_name', 'category']
 
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ['tutor', 'subject', 'price']
-    list_filter = ['price', 'subject']
-    search_fields = ['subject', 'description']
+    list_display = ['username', 'subject_name', 'price']
+    list_filter = ['price', 'subject_name']
+    search_fields = ['subject_name', 'description']
 
 
 @admin.register(Announcement)
 class AnnouncementAdmin(admin.ModelAdmin):
-    list_display = ['tutor', 'subject', 'description']
+    list_display = ['username', 'subject_name', 'description']

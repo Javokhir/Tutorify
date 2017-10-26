@@ -21,12 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '35*@unk&#erj$x(!2d$*og^b&atm%@3e7cda7^*(q8-p)k*l-z'
-# SECRET_KEY = 'nk+f6msl^%nw)j4fp5-r6n#b8zxgh8(4zvxmw#-wp51ur)khyp'
-TWILIO_ACCOUNT_SID = 'AC5a80307ad477b13ec88fa9a972c477d8'
-TWILIO_AUTH_TOKEN = '587823e09545bf55be385a1415300f85'
-TWILIO_NUMBER = '+13016835616'
 
-#AUTH_USER_MODEL = 'main.Tutor'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'phonenumber_field',
-    'django_twilio',
     'rest_framework',
     'rest_framework.authtoken',
     'main',
@@ -143,5 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
+MEDIA_ROOT = 'templates/'
+MEDIA_URL = '/'
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+
