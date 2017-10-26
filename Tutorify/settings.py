@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tutorify_db',
         'USER': 'postgres',
-        'PASSWORD': 'robin9395',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
