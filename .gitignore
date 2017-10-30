@@ -1,3 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.gitignore
+.idea/
+Tutorify/__pycache__/
+images/
+main/__pycache__/
+main/migrations/
+templates/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
