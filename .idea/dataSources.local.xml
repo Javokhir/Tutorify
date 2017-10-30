@@ -10,5 +10,13 @@
       <user-name>postgres</user-name>
       <introspection-schemas>tutorify_db:public</introspection-schemas>
     </data-source>
+    <data-source name="Django default" uuid="9d44a132-0602-4534-8fc6-9d5660f15c61">
+      <database-info product="PostgreSQL" version="9.6.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>tutorify_db:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

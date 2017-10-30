@@ -13,8 +13,8 @@ from main.models import Tutor, Subject, Announcement, Course
 
 authy_api = AuthyApiClient('qq6mSfaAJDXAPZ7kgOI2XImAQF1iBtjl')
 
-from .serializers import TutorSerializer, LearnerSerializer, SmsVerifySerializer
-from .serializers import SubjectSerializer, AnnouncementSerializer, CourseSerializer
+from .serializers import TutorSerializer, LearnerSerializer, SmsVerifySerializer, \
+    SubjectSerializer, AnnouncementSerializer, CourseSerializer
 
 
 @api_view(['POST'])
@@ -33,6 +33,7 @@ def authenticate_tutor(request):
             country_code = tutor.country_code
 
             authy_api.phones.verification_start(phone_number, country_code, via='sms')
+
         return Response(status=status.HTTP_201_CREATED)
     return Response(status=status.HTTP_400_BAD_REQUEST)
 
@@ -90,7 +91,9 @@ def tutor_list(request):
     tutors = Tutor.objects.all()
     serializer = TutorSerializer(tutors, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 
 @api_view(['GET'])
@@ -101,7 +104,9 @@ def tutor_by_subject(request, subject_id):
     tutors = Tutor.objects.filter(subject_name=subject_id).all()
     serializer = TutorSerializer(tutors, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 
 @api_view(['GET'])
@@ -112,7 +117,9 @@ def subject_list(request):
     subjects = Subject.objects.all()
     serializer = SubjectSerializer(subjects, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 
 @api_view(['POST'])
@@ -120,15 +127,17 @@ def subject_list(request):
 @authentication_classes((AllowAny,))
 @permission_classes((AllowAny,))
 def create_announcement(request):
-
     if request.method == 'POST':
         serializer = AnnouncementSerializer(data=request.data)
 
         if serializer.is_valid(raise_exception=True):
             serializer.save()
 
-        return Response(status=status.HTTP_201_CREATED)
-    return Response(status=status.HTTP_400_BAD_REQUEST)
+            response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+        return JsonResponse(response_code)
+    response_code = {'code': 'Success', 'error': 'yes'}
+    return JsonResponse(response_code)
 
 
 @api_view(['POST'])
@@ -136,7 +145,6 @@ def create_announcement(request):
 @authentication_classes((AllowAny,))
 @permission_classes((AllowAny,))
 def create_course(request):
-
     if request.method == 'POST':
         serializer = CourseSerializer(data=request.data)
 
@@ -152,11 +160,12 @@ def create_course(request):
 @authentication_classes((AllowAny,))
 @permission_classes((AllowAny,))
 def announcement_list(request):
-
     announcements = Announcement.objects.all()
     serializer = AnnouncementSerializer(announcements, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 
 @api_view(['GET'])
@@ -164,11 +173,12 @@ def announcement_list(request):
 @authentication_classes((AllowAny,))
 @permission_classes((AllowAny,))
 def course_list(request):
-
     courses = Course.objects.all()
     serializer = CourseSerializer(courses, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 
 @api_view(['GET'])
@@ -176,11 +186,12 @@ def course_list(request):
 @authentication_classes((AllowAny,))
 @permission_classes((AllowAny,))
 def course_by_subject(request, subject_id):
-
     courses = Course.objects.filter(subject_name=subject_id).all()
     serializer = CourseSerializer(courses, many=True)
 
-    return JsonResponse(serializer.data, safe=False)
+    response_code = {'code': 'Success', 'error': 'no', 'object': serializer.data}
+
+    return JsonResponse(response_code)
 
 #
 # @api_view(['GET'])
@@ -193,11 +204,3 @@ def course_by_subject(request, subject_id):
 #     serializer = CourseSerializer(courses, many=True)
 #
 #     return JsonResponse(serializer.data, safe=False)
-
-
-
-
-
-
-
-

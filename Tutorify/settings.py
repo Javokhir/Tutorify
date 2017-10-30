@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tutorify_db',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'robin9395',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -107,16 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
-}
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

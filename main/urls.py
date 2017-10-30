@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 
 from Tutorify import settings
 from .views import authenticate_tutor, authenticate_learner, sms_confirmation, tutor_list, tutor_by_subject, subject_list
-from .views import create_announcement, course_list, announcement_list, create_course, course_by_subject, course_by_tutor
+from .views import create_announcement, course_list, announcement_list, create_course, course_by_subject
 
 
 urlpatterns = [
